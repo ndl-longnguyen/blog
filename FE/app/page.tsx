@@ -38,7 +38,8 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-background">
       <Header activeSection={activeSection} />
-      <main className="px-6 lg:px-24 xl:px-32">
+      <main id="main-content" className="px-6 lg:px-24 xl:px-32">
+        <h1 className="sr-only">Nguyen Dai Long - Backend Developer Portfolio</h1>
         <Hero />
         <About />
         <Experience />
