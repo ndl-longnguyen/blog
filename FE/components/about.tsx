@@ -2,14 +2,14 @@ import Image from "next/image"
 
 export function About() {
   const technologies = [
-    "Python",
-    "Django REST Framework",
-    "Laravel",
-    "PostgreSQL",
-    "Redis",
-    "Google Cloud Platform",
-    "Docker",
-    "RESTful APIs",
+    "Python & Django REST",
+    "PHP & Laravel",
+    "PostgreSQL & MySQL",
+    "Redis & Caching",
+    "AWS & Google Cloud (GCP)",
+    "Docker & CI/CD Pipelines",
+    "WebSocket & Real-time",
+    "RESTful API & System Architecture",
   ]
 
   return (
@@ -23,34 +23,36 @@ export function About() {
       <div className="grid md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-4 text-muted-foreground">
           <p className="leading-relaxed">
-            Hello! I&apos;m Long, a passionate Backend Developer based in{" "}
-            <span className="text-primary">Da Nang, Vietnam</span>. I specialize in building robust, 
-            scalable backend systems that power modern web applications.
+            Hello! I&apos;m Long, a dedicated Backend Engineer &amp; Backend Lead based in{" "}
+            <span className="text-primary">Da Nang, Vietnam</span>. I specialize in designing robust 
+            architectures, optimizing databases, and engineering high-availability backend systems 
+            serving tens of thousands of active users.
           </p>
 
           <p className="leading-relaxed">
-            With over <span className="text-primary">3 years of experience</span>, I&apos;ve worked on 
-            diverse projects ranging from enterprise management systems to e-commerce platforms. 
-            I take pride in writing clean, efficient code and implementing best practices in 
-            system architecture.
+            With over <span className="text-primary">4+ years of professional experience</span>, 
+            I evaluate at <span className="text-primary">ITSS Level 3</span>—demonstrating complete 
+            autonomy in requirements analysis, complex system design, and leading backend teams 
+            to deliver mission-critical enterprise software.
           </p>
 
           <p className="leading-relaxed">
-            Currently, I&apos;m working as a <span className="text-primary">Software Engineer</span> at{" "}
+            Currently, I serve as <span className="text-primary">Backend Lead / Backend Engineer</span> at{" "}
             <a 
               href="https://soarig.com" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="noopener noreferrer" 
               className="text-primary hover:underline"
             >
               SOARIG VIETNAM
             </a>
-            , where I lead backend teams, design database structures, and build high-performance 
-            APIs using Django REST Framework.
+            . I mentor team members, enforce clean code conventions through rigorous code reviews, 
+            orchestrate multi-cloud deployments (AWS &amp; GCP), and leverage modern AI tools to 
+            continually accelerate development velocity and system quality.
           </p>
 
           <p className="leading-relaxed mb-4">
-            Here are some technologies I&apos;ve been working with:
+            Here are key technologies and platforms I frequently work with:
           </p>
 
           <ul className="grid grid-cols-2 gap-2 font-mono text-sm">

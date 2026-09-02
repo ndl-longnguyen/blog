@@ -6,16 +6,17 @@ import { cn } from "@/lib/utils"
 const experiences = [
   {
     company: "SOARIG VIETNAM",
-    role: "Software Engineer",
+    role: "Backend Engineer / Backend Lead",
     period: "Oct 2023 - Present",
     url: "https://soarig.com",
     highlights: [
-      "Led backend team: enforced coding conventions, performed code reviews, and maintained system quality and stability",
-      "Designed database structures, developed backend features and RESTful APIs following project architecture",
-      "Optimized database queries and backend performance to improve system throughput",
-      "Supported cloud-related projects on Google Cloud Platform (GCP) including setup, configuration, and troubleshooting",
-      "Mentored new team members, guided onboarding process, and improved team productivity",
-      "Demonstrated strong task management, ensuring efficient workload distribution and on-time delivery",
+      "Lead the backend engineering team: architect database schemas, enforce clean code conventions, and conduct rigorous code reviews to ensure system quality and stability",
+      "Develop scalable backend services and high-throughput RESTful APIs using Django REST Framework (DRF) and PostgreSQL",
+      "Architect and implement real-time communication features utilizing Redis and WebSocket",
+      "Build and maintain automated CI/CD deployment pipelines using Google Cloud Build and Cloud Run with Docker",
+      "Optimize database queries, indexing strategies, and caching layers to elevate system throughput and responsiveness",
+      "Engineer robust notification pipelines handling bulk emails and push notifications for critical system alerts",
+      "Mentor junior team members, streamline onboarding, and integrate AI-assisted coding tools to maximize team velocity",
     ],
   },
   {
@@ -24,11 +25,11 @@ const experiences = [
     period: "Mar 2022 - Sep 2023",
     url: "#",
     highlights: [
-      "Analyzed functional requirements, designed database schema, and developed server-rendered applications and APIs using Laravel",
-      "Built software systems for Japanese customers with strict requirements for quality, performance, and security",
-      "Improved application performance through query optimization and backend processing enhancements",
-      "Applied Japanese coding standards (conventions, testing, code review) to maintain consistency and high quality",
-      "Worked closely with cross-functional teams across requirements analysis, development, testing, and deployment phases",
+      "Developed enterprise-grade backend systems and RESTful APIs using Laravel and MySQL for Japanese corporate clients",
+      "Designed relational database schemas and implemented complex backend business logic adhering to strict Japanese software quality and security standards",
+      "Tuned database queries and optimized backend data processing to maintain high performance under peak loads",
+      "Collaborated closely with cross-functional teams throughout requirements analysis, system design, testing, and deployment phases",
+      "Maintained and enhanced live production applications with continuous monitoring and zero-downtime releases",
     ],
   },
 ]

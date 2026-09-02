@@ -45,9 +45,10 @@ export function Hero() {
         }`}
       >
         <p className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-12">
-          Backend Developer with <span className="text-primary">3+ years</span> of experience specializing in 
-          Python, Django, Laravel, and cloud technologies. Currently focused on building 
-          high-performance, scalable systems at{" "}
+          Backend Engineer & Backend Lead with <span className="text-primary">4+ years</span> of experience 
+          specializing in Python (Django/DRF), Laravel, and cloud architectures (AWS & GCP). 
+          Experienced in building robust systems serving <span className="text-primary">30,000+ users</span>, 
+          real-time messaging, and high-throughput APIs at{" "}
           <a href="https://soarig.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
             SOARIG VIETNAM
           </a>

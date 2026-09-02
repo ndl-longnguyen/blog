@@ -11,16 +11,15 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://longnd.vercel.app'),
   title: {
-    default: 'Nguyen Dai Long | Software Engineer',
+    default: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
     template: '%s | Nguyen Dai Long'
   },
-  description: 'Backend Developer with 3+ years of experience in Python, Django, Laravel, and cloud technologies. Based in Da Nang, Vietnam. Specializing in building scalable, high-performance backend systems.',
+  description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Based in Da Nang, Vietnam. Specializing in architecting high-performance backend systems serving 30k+ users, database optimization, and cloud infrastructure.',
   keywords: [
-    'Nguyen Dai Long', 'Nguyễn Đại Long', 'Software Engineer', 'Kỹ sư phần mềm',
-    'Backend Developer', 'Phát triển Backend', 'Python Developer', 'Lập trình viên Python',
-    'Django REST Framework', 'Laravel', 'Google Cloud Platform', 'GCP', 'Docker',
-    'Software Engineer Da Nang', 'Kỹ sư phần mềm Đà Nẵng', 'Scalable Backend Systems',
-    'Enterprise Management System', 'Electronic Contract Management'
+    'Nguyen Dai Long', 'Nguyễn Đại Long', 'Software Engineer', 'Backend Engineer', 'Backend Lead',
+    'Python Developer', 'Django REST Framework', 'Laravel', 'Amazon Web Services', 'AWS',
+    'Google Cloud Platform', 'GCP', 'Docker', 'ITSS Level 3', 'Da Nang', 'Scalable Backend Systems',
+    'Database Optimization', 'PostgreSQL', 'Redis', 'WebSockets', 'CI/CD Pipelines'
   ],
   authors: [{ name: 'Nguyen Dai Long' }],
   creator: 'Nguyen Dai Long',
@@ -56,22 +55,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: ['vi_VN'],
     url: 'https://longnd.vercel.app',
-    title: 'Nguyen Dai Long | Software Engineer',
-    description: 'Backend Developer with 3+ years of experience in Python, Django, Laravel, and cloud technologies. Based in Da Nang, Vietnam.',
+    title: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
+    description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Specializing in systems serving 30k+ users and cloud infrastructure.',
     siteName: 'Nguyen Dai Long Portfolio',
     images: [
       {
         url: '/android-chrome-512x512.png',
         width: 512,
         height: 512,
-        alt: 'Nguyen Dai Long - Software Engineer',
+        alt: 'Nguyen Dai Long - Backend Engineer & Backend Lead',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nguyen Dai Long | Software Engineer',
-    description: 'Backend Developer with 3+ years of experience in Python, Django, Laravel, and cloud technologies.',
+    title: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
+    description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP.',
     creator: '@ndl_longnguyen',
     images: ['/android-chrome-512x512.png'],
   },

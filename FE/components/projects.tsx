@@ -1,38 +1,38 @@
 const projects = [
   {
-    title: "Team Management System",
+    title: "Professional Certification Management & E-Learning Platform",
     description:
-      "Enterprise-grade system for business team management. Features real-time communication, payment integration with Stripe, and cryptocurrency exchange via Dotmoney API. Led the backend team in designing scalable architecture.",
-    tech: ["Django REST Framework", "Next.js", "PostgreSQL", "Redis", "Docker", "GCP", "WebSocket", "Stripe"],
-    role: "Lead BE Team, Backend Developer",
+      "Enterprise e-learning and certification platform with automated course management, video/event completion tracking, and instant digital certificate issuance. Integrated Stripe payment gateway for subscriptions, Redis for background tasks and caching, bulk notifications, and deployed on AWS.",
+    tech: ["Django REST Framework", "Next.js", "PostgreSQL", "Redis", "Docker", "AWS", "Stripe Payment"],
+    role: "Backend Developer, Cloud Deployment",
+    period: "May 2025 - Present",
+    teamSize: 7,
+  },
+  {
+    title: "Team Management System – Supporting Businesses",
+    description:
+      "Comprehensive enterprise system for corporate team management. Features live messaging via WebSocket, payment processing via Stripe, and point/currency exchange via Dotmoney API. Led the backend engineering team in architectural design, database tuning, and GCP deployment.",
+    tech: ["Django REST Framework", "Next.js", "PostgreSQL", "Redis", "Docker", "GCP", "WebSocket", "Stripe", "Dotmoney API"],
+    role: "Backend Lead, Backend Developer",
     period: "May 2024 - Present",
     teamSize: 8,
   },
   {
-    title: "Electronic Contract Management System",
-    description:
-      "Digital contract management platform with complex business logic for electronic document signing and management. Built robust CI/CD pipelines for seamless deployment and ensured stable release delivery.",
-    tech: ["Django REST Framework", "Next.js", "PostgreSQL", "Docker", "GCP", "Stripe Payment"],
-    role: "Backend Developer",
-    period: "Aug 2024 - Oct 2025",
-    teamSize: 6,
-  },
-  {
     title: "Landing Page Builder via LINE Platform",
     description:
-      "Full-stack application enabling users to create custom landing pages through LINE platform integration. Analyzed legacy systems, communicated directly with clients, and delivered features on schedule.",
-    tech: ["Laravel", "VueJS", "LINE API"],
+      "Full-stack marketing and page builder application enabling businesses to generate customized landing pages integrated directly with the LINE messaging platform. Designed relational database schemas, built REST APIs, and created responsive interfaces using VueJS.",
+    tech: ["Laravel", "VueJS", "MySQL", "LINE API", "TailwindCSS"],
     role: "Full-stack Developer",
     period: "Oct 2023 - May 2024",
     teamSize: 4,
   },
   {
-    title: "Online Shopping Website",
+    title: "Electronic Contract Management System",
     description:
-      "E-commerce platform with real-time notifications using Pusher and push notifications via Firebase Cloud Messaging. Developed APIs for mobile app integration and ensured on-time delivery.",
-    tech: ["Laravel", "MySQL", "jQuery", "AJAX", "Bootstrap", "Pusher", "FCM"],
+      "Digital contract platform handling end-to-end electronic document signing, PDF processing pipelines, and compliant audit trails. Engineered memory-optimized document handling, automated CI/CD release pipelines on GCP, and robust role-based access control.",
+    tech: ["Django REST Framework", "Next.js", "PostgreSQL", "Docker", "GCP", "Stripe Payment", "OpenAPI"],
     role: "Backend Developer",
-    period: "Apr 2023 - Sep 2023",
+    period: "Aug 2024 - Oct 2025",
     teamSize: 6,
   },
 ]
