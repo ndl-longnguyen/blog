@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export function About() {
   const technologies = [
     "Python",
@@ -64,8 +66,14 @@ export function About() {
         <div className="relative group">
           <div className="relative rounded overflow-hidden">
             <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
-            <div className="w-full aspect-square bg-card rounded flex items-center justify-center">
-              <div className="text-6xl font-bold text-primary/30">NDL</div>
+            <div className="w-full aspect-square bg-card rounded overflow-hidden flex items-center justify-center">
+              <Image
+                src="/logo-dark.png"
+                alt="Nguyen Dai Long"
+                width={400}
+                height={400}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
             </div>
           </div>
           <div className="absolute top-4 left-4 w-full h-full border-2 border-primary rounded -z-10 group-hover:top-2 group-hover:left-2 transition-all" />

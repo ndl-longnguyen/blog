@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { cn } from "@/lib/utils"
 
 interface HeaderProps {
@@ -35,8 +36,22 @@ export function Header({ activeSection }: HeaderProps) {
       )}
     >
       <nav className="flex items-center justify-between px-6 lg:px-12 py-4">
-        <a href="#" className="text-primary font-mono text-2xl font-bold hover:opacity-80 transition-opacity">
-          NDL
+        <a
+          href="#"
+          className="flex items-center gap-2.5 group hover:opacity-90 transition-opacity"
+          aria-label="Home"
+        >
+          <Image
+            src="/logo.png"
+            alt="Nguyen Dai Long Logo"
+            width={40}
+            height={40}
+            className="w-9 h-9 sm:w-10 sm:h-10 object-contain drop-shadow-[0_2px_8px_rgba(212,175,55,0.3)] transition-transform duration-300 group-hover:scale-105"
+            priority
+          />
+          <span className="text-primary font-mono text-2xl font-bold tracking-wider">
+            NDL
+          </span>
         </a>
 
         {/* Desktop Navigation */}
