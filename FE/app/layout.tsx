@@ -11,17 +11,26 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL('https://longnd.vercel.app'),
   title: {
-    default: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
+    default: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
     template: '%s | Nguyen Dai Long'
   },
-  description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Based in Da Nang, Vietnam. Specializing in architecting high-performance backend systems serving 30k+ users, database optimization, and cloud infrastructure.',
+  description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Creator of NDL Arcade (free browser games), ShortLink (URL shortener), and other free web tools. Based in Da Nang, Vietnam.',
   keywords: [
-    'Nguyen Dai Long', 'Nguyễn Đại Long', 'Software Engineer', 'Backend Engineer', 'Backend Lead',
+    // Personal / Professional
+    'Nguyen Dai Long', 'Nguyễn Đại Long', 'NDL', 'Software Engineer', 'Backend Engineer', 'Backend Lead',
     'Python Developer', 'Django REST Framework', 'Laravel', 'Amazon Web Services', 'AWS',
     'Google Cloud Platform', 'GCP', 'Docker', 'ITSS Level 3', 'Da Nang', 'Scalable Backend Systems',
-    'Database Optimization', 'PostgreSQL', 'Redis', 'WebSockets', 'CI/CD Pipelines'
+    'Database Optimization', 'PostgreSQL', 'Redis', 'WebSockets', 'CI/CD Pipelines',
+    // Products & Tools
+    'NDL Arcade', 'free browser games', 'free online games', 'play games online free',
+    'ShortLink', 'URL shortener free', 'QR code generator free', 'UTM builder',
+    'Click 2 Top', 'coin clicker game', 'competitive arcade game',
+    'Little Pathfinder', 'puzzle game for kids', 'maze game',
+    'image compressor free', 'compress image online free',
+    'Facebook video downloader', 'FB downloader free',
+    'lãi suất ngân hàng', 'so sánh lãi suất tiết kiệm',
   ],
-  authors: [{ name: 'Nguyen Dai Long' }],
+  authors: [{ name: 'Nguyen Dai Long', url: 'https://longnd.vercel.app' }],
   creator: 'Nguyen Dai Long',
   publisher: 'Nguyen Dai Long',
   robots: {
@@ -55,22 +64,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: ['vi_VN'],
     url: 'https://longnd.vercel.app',
-    title: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
-    description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Specializing in systems serving 30k+ users and cloud infrastructure.',
-    siteName: 'Nguyen Dai Long Portfolio',
+    title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
+    description: 'Backend Engineer & Backend Lead with 4+ years of experience. Creator of NDL Arcade (free browser games), ShortLink (URL shortener + QR Studio), and other free web tools.',
+    siteName: 'Nguyen Dai Long',
     images: [
       {
         url: '/android-chrome-512x512.png',
         width: 512,
         height: 512,
-        alt: 'Nguyen Dai Long - Backend Engineer & Backend Lead',
+        alt: 'Nguyen Dai Long - Backend Engineer & Creator',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nguyen Dai Long | Backend Engineer & Backend Lead',
-    description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP.',
+    title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
+    description: 'Backend Engineer & Backend Lead. Creator of free browser games (NDL Arcade, Click 2 Top) and web tools (ShortLink, Image Compressor).',
     creator: '@ndl_longnguyen',
     images: ['/android-chrome-512x512.png'],
   },
@@ -79,7 +88,84 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://longnd.vercel.app',
+    languages: {
+      'en-US': 'https://longnd.vercel.app',
+      'vi-VN': 'https://longnd.vercel.app',
+    },
   },
+}
+
+// Schema.org structured data
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://longnd.vercel.app/#person",
+  name: "Nguyen Dai Long",
+  alternateName: "NDL",
+  url: "https://longnd.vercel.app",
+  jobTitle: "Backend Engineer & Backend Lead",
+  description: "Backend Engineer with 4+ years of experience in Python, Django, Laravel, AWS, and GCP. Creator of free web games and developer tools.",
+  sameAs: [
+    "https://www.linkedin.com/in/ndl-longnguyen/",
+  ],
+  owns: [
+    {
+      "@type": "WebApplication",
+      name: "NDL Arcade",
+      url: "https://game-online-free.vercel.app",
+      description: "Free browser arcade games: Snake, Tetris, Space Invaders, Breakout, Sudoku",
+      applicationCategory: "GameApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "Click 2 Top",
+      url: "https://click2top.vercel.app",
+      description: "Competitive coin clicker arcade game with global Nations Cup leaderboard",
+      applicationCategory: "GameApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "Little Pathfinder",
+      url: "https://little-pathfinder.vercel.app",
+      description: "Charming maze puzzle game for kids and all ages",
+      applicationCategory: "GameApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "ShortLink – URL & QR Studio",
+      url: "https://ndllink.vercel.app",
+      description: "Free URL shortener with dynamic QR code generation, analytics, and UTM builder",
+      applicationCategory: "BusinessApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "Image Compressor",
+      url: "https://image-compression-free.vercel.app",
+      description: "Client-side image compression tool — private, free, no upload required",
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "FB Video Downloader",
+      url: "https://fbdowload.vercel.app",
+      description: "Simple Facebook video downloader supporting HD and SD quality",
+      applicationCategory: "UtilitiesApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+    {
+      "@type": "WebApplication",
+      name: "Lãi Suất Ngân Hàng",
+      url: "https://laisuatnganhang.vercel.app",
+      description: "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
+      applicationCategory: "FinanceApplication",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -97,6 +183,10 @@ export default function RootLayout({
         <meta name="theme-color" content="#0f172a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9166964727480227"
@@ -104,7 +194,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
       </body>
