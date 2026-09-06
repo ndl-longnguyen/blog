@@ -97,7 +97,7 @@ const PRODUCTS: Product[] = [
     name: "Lãi Suất Ngân Hàng",
     description:
       "Công cụ tra cứu và so sánh lãi suất tiền gửi các ngân hàng Việt Nam theo kỳ hạn. Cập nhật thường xuyên, hỗ trợ tính lãi tự động. Dành cho người gửi tiết kiệm cá nhân và doanh nghiệp.",
-    url: SUBDOMAINS.laisaut,
+    url: SUBDOMAINS.laisuat,
     category: "tool",
     tags: ["Lãi suất", "Ngân hàng", "Tiết kiệm", "Tài chính"],
     emoji: "🏦",
