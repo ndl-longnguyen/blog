@@ -76,6 +76,9 @@ const PRODUCTS: Product[] = [
     badge: "Free",
     color: "from-sky-500/20 to-cyan-500/10",
   },
+  // NOTE: Temporarily hidden during Google AdSense review to avoid third-party copyright / video downloader policy flags.
+  // Can be re-enabled after site approval.
+  /*
   {
     id: "fbdownloader",
     name: "FB Video Downloader",
@@ -87,6 +90,7 @@ const PRODUCTS: Product[] = [
     emoji: "⬇️",
     color: "from-blue-500/20 to-indigo-500/10",
   },
+  */
   {
     id: "laisuatnganhang",
     name: "Lãi Suất Ngân Hàng",

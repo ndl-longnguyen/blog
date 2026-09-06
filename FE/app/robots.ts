@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://longnd.vercel.app/sitemap.xml',
+        sitemap: 'https://ndlong.site/sitemap.xml',
     }
 }
+

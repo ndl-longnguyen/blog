@@ -1,6 +1,11 @@
+import Link from "next/link"
+
 export function Footer() {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="py-8 text-center">
+    <footer className="py-10 text-center border-t border-border/30 mt-16">
+      {/* Mobile Social Links */}
       <div className="flex justify-center gap-6 mb-6 lg:hidden">
         <a
           href="https://www.linkedin.com/in/ndl-longnguyen/"
@@ -66,15 +71,45 @@ export function Footer() {
         </a>
       </div>
 
-      <a
-        href="https://github.com/bchiang7"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="font-mono text-sm text-muted-foreground hover:text-primary transition-colors"
-      >
-        <p className="mb-1">Designed & Built by Nguyen Dai Long</p>
-        <p className="text-xs">Inspired by Brittany Chiang</p>
-      </a>
+      {/* Compliance / Policy Links (Required by Google AdSense) */}
+      <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-4 font-mono text-xs sm:text-sm text-muted-foreground">
+        <Link
+          href="/privacy-policy"
+          className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+        >
+          Privacy Policy
+        </Link>
+        <span>•</span>
+        <Link
+          href="/terms"
+          className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+        >
+          Terms of Service
+        </Link>
+        <span>•</span>
+        <a
+          href="#contact"
+          className="hover:text-primary transition-colors underline-offset-4 hover:underline"
+        >
+          Contact
+        </a>
+      </div>
+
+      {/* Copyright & Author */}
+      <div className="font-mono text-xs text-muted-foreground space-y-1">
+        <p>
+          © {currentYear}{" "}
+          <span className="text-primary font-semibold">Nguyen Dai Long</span> (
+          <a href="https://ndlong.site" className="hover:text-primary hover:underline">
+            ndlong.site
+          </a>
+          ). All rights reserved.
+        </p>
+        <p className="text-[11px] opacity-75">
+          Designed &amp; Built with Next.js &amp; Tailwind CSS
+        </p>
+      </div>
     </footer>
   )
 }
+

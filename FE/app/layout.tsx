@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://longnd.vercel.app'),
+  metadataBase: new URL('https://ndlong.site'),
   title: {
     default: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
     template: '%s | Nguyen Dai Long'
@@ -27,10 +27,9 @@ export const metadata: Metadata = {
     'Click 2 Top', 'coin clicker game', 'competitive arcade game',
     'Little Pathfinder', 'puzzle game for kids', 'maze game',
     'image compressor free', 'compress image online free',
-    'Facebook video downloader', 'FB downloader free',
     'lãi suất ngân hàng', 'so sánh lãi suất tiết kiệm',
   ],
-  authors: [{ name: 'Nguyen Dai Long', url: 'https://longnd.vercel.app' }],
+  authors: [{ name: 'Nguyen Dai Long', url: 'https://ndlong.site' }],
   creator: 'Nguyen Dai Long',
   publisher: 'Nguyen Dai Long',
   robots: {
@@ -63,7 +62,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['vi_VN'],
-    url: 'https://longnd.vercel.app',
+    url: 'https://ndlong.site',
     title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
     description: 'Backend Engineer & Backend Lead with 4+ years of experience. Creator of NDL Arcade (free browser games), ShortLink (URL shortener + QR Studio), and other free web tools.',
     siteName: 'Nguyen Dai Long',
@@ -87,10 +86,10 @@ export const metadata: Metadata = {
     google: 'f08a2d0e85e82e12',
   },
   alternates: {
-    canonical: 'https://longnd.vercel.app',
+    canonical: 'https://ndlong.site',
     languages: {
-      'en-US': 'https://longnd.vercel.app',
-      'vi-VN': 'https://longnd.vercel.app',
+      'en-US': 'https://ndlong.site',
+      'vi-VN': 'https://ndlong.site',
     },
   },
 }
@@ -99,10 +98,10 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://longnd.vercel.app/#person",
+  "@id": "https://ndlong.site/#person",
   name: "Nguyen Dai Long",
   alternateName: "NDL",
-  url: "https://longnd.vercel.app",
+  url: "https://ndlong.site",
   jobTitle: "Backend Engineer & Backend Lead",
   description: "Backend Engineer with 4+ years of experience in Python, Django, Laravel, AWS, and GCP. Creator of free web games and developer tools.",
   sameAs: [
@@ -151,14 +150,6 @@ const personSchema = {
     },
     {
       "@type": "WebApplication",
-      name: "FB Video Downloader",
-      url: "https://fbdowload.vercel.app",
-      description: "Simple Facebook video downloader supporting HD and SD quality",
-      applicationCategory: "UtilitiesApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    },
-    {
-      "@type": "WebApplication",
       name: "Lãi Suất Ngân Hàng",
       url: "https://laisuatnganhang.vercel.app",
       description: "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
@@ -183,6 +174,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#0f172a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="google-adsense-account" content="ca-pub-9166964727480227" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
