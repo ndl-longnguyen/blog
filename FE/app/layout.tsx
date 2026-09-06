@@ -111,7 +111,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "NDL Arcade",
-      url: "https://game-online-free.vercel.app",
+      url: "https://arcade.ndlong.site",
       description: "Free browser arcade games: Snake, Tetris, Space Invaders, Breakout, Sudoku",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -119,7 +119,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Click 2 Top",
-      url: "https://click2top.vercel.app",
+      url: "https://click.ndlong.site",
       description: "Competitive coin clicker arcade game with global Nations Cup leaderboard",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -127,7 +127,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Little Pathfinder",
-      url: "https://little-pathfinder.vercel.app",
+      url: "https://kids.ndlong.site",
       description: "Charming maze puzzle game for kids and all ages",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -135,7 +135,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "ShortLink – URL & QR Studio",
-      url: "https://ndllink.vercel.app",
+      url: "https://link.ndlong.site",
       description: "Free URL shortener with dynamic QR code generation, analytics, and UTM builder",
       applicationCategory: "BusinessApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -143,7 +143,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Image Compressor",
-      url: "https://image-compression-free.vercel.app",
+      url: "https://image.ndlong.site",
       description: "Client-side image compression tool — private, free, no upload required",
       applicationCategory: "UtilitiesApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -151,7 +151,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Lãi Suất Ngân Hàng",
-      url: "https://laisuatnganhang.vercel.app",
+      url: "https://laisaut.ndlong.site",
       description: "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
       applicationCategory: "FinanceApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
