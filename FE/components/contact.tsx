@@ -1,7 +1,7 @@
 export function Contact() {
   return (
     <section id="contact" className="py-24 text-center max-w-2xl mx-auto">
-      <p className="font-mono text-primary mb-4">05. What&apos;s Next?</p>
+      <p className="font-mono text-primary mb-4">07. What&apos;s Next?</p>
       <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">Get In Touch</h2>
       <p className="text-muted-foreground text-lg leading-relaxed mb-12">
         I&apos;m currently looking for new opportunities and my inbox is always open. 

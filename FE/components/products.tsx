@@ -129,7 +129,7 @@ export function Products() {
     <section id="products" className="py-24">
       {/* Section Header */}
       <h2 className="flex items-center text-2xl md:text-3xl font-bold text-foreground mb-4">
-        <span className="text-primary font-mono text-xl mr-2">06.</span>
+        <span className="text-primary font-mono text-xl mr-2">05.</span>
         My Products &amp; Open Source
         <span className="ml-4 h-px bg-border flex-1 max-w-xs" />
       </h2>
