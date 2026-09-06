@@ -7,6 +7,7 @@ export const SUBDOMAINS = {
   link: process.env.NEXT_PUBLIC_LINK_URL || 'https://link.ndlong.site',
   image: process.env.NEXT_PUBLIC_IMAGE_URL || 'https://image.ndlong.site',
   laisuat: process.env.NEXT_PUBLIC_LAISUAT_URL || process.env.NEXT_PUBLIC_LAISAUT_URL || 'https://laisuat.ndlong.site',
-    laisaut: process.env.NEXT_PUBLIC_LAISUAT_URL || process.env.NEXT_PUBLIC_LAISAUT_URL || 'https://laisuat.ndlong.site',
+  laisaut: process.env.NEXT_PUBLIC_LAISUAT_URL || process.env.NEXT_PUBLIC_LAISAUT_URL || 'https://laisuat.ndlong.site',
+  tygia: process.env.NEXT_PUBLIC_TYGIA_URL || 'https://tygia.ndlong.site',
   fb: process.env.NEXT_PUBLIC_FB_URL || 'https://fb.ndlong.site',
 } as const

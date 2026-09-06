@@ -103,6 +103,18 @@ const PRODUCTS: Product[] = [
     emoji: "🏦",
     color: "from-green-500/20 to-teal-500/10",
   },
+  {
+    id: "tygiahub",
+    name: "Tỷ Giá & Giá Vàng Hub",
+    description:
+      "Tra cứu trực tuyến bảng giá vàng miếng SJC, DOJI, 9999, tỷ giá ngoại tệ ngân hàng (USD, EUR, JPY...) và giá xăng dầu Petrolimex. Tích hợp bộ máy tính quy đổi tiền tệ và tính giá vàng theo lượng/chỉ.",
+    url: SUBDOMAINS.tygia,
+    category: "tool",
+    tags: ["Tỷ giá", "Giá vàng", "Ngoại tệ", "Xăng dầu", "Tài chính"],
+    emoji: "🪙",
+    badge: "New",
+    color: "from-amber-500/20 to-yellow-500/10",
+  },
 ]
 
 const CATEGORIES: { label: string; value: Category }[] = [
