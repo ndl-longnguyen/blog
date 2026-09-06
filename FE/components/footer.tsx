@@ -74,6 +74,13 @@ export function Footer() {
       {/* Compliance / Policy Links (Required by Google AdSense) */}
       <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 mb-4 font-mono text-xs sm:text-sm text-muted-foreground">
         <Link
+          href="/blog"
+          className="hover:text-primary transition-colors underline-offset-4 hover:underline font-semibold text-primary"
+        >
+          Blog
+        </Link>
+        <span>•</span>
+        <Link
           href="/privacy-policy"
           className="hover:text-primary transition-colors underline-offset-4 hover:underline"
         >
