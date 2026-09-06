@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { SUBDOMAINS } from "@/config/site"
 
 type Category = "all" | "game" | "tool"
 
@@ -22,7 +23,7 @@ const PRODUCTS: Product[] = [
     name: "NDL Arcade",
     description:
       "Free browser arcade games with no download required. Play Snake (5 maps), Tetris (10 difficulty levels), Space Invaders with boss battles, Breakout, and Sudoku. Global leaderboard & mobile-friendly.",
-    url: "https://arcade.ndlong.site",
+    url: SUBDOMAINS.arcade,
     category: "game",
     tags: ["Snake", "Tetris", "Space Invaders", "Breakout", "Sudoku"],
     emoji: "🕹️",
@@ -34,7 +35,7 @@ const PRODUCTS: Product[] = [
     name: "Click 2 Top",
     description:
       "Fast-paced competitive coin clicker arcade game. Tap coins, dodge bombs, upgrade passive generators, and compete on the global Nations Cup leaderboard. Real-time world rankings by country.",
-    url: "https://click.ndlong.site",
+    url: SUBDOMAINS.click,
     category: "game",
     tags: ["Clicker", "Nations Cup", "Leaderboard", "Competitive"],
     emoji: "🪙",
@@ -46,7 +47,7 @@ const PRODUCTS: Product[] = [
     name: "Little Pathfinder",
     description:
       "A charming puzzle game for kids and all ages. Guide your character through challenging mazes and discover the path to the finish. Great for logic training and spatial reasoning.",
-    url: "https://kids.ndlong.site",
+    url: SUBDOMAINS.kids,
     category: "game",
     tags: ["Puzzle", "Kids", "Maze", "Pathfinding"],
     emoji: "🧩",
@@ -57,7 +58,7 @@ const PRODUCTS: Product[] = [
     name: "ShortLink – URL & QR Studio",
     description:
       "Production-ready URL shortener with dynamic QR code generation (PNG/SVG), privacy-safe click analytics, password-protected links, custom alias support, and UTM campaign builder. No sign-up required.",
-    url: "https://link.ndlong.site",
+    url: SUBDOMAINS.link,
     category: "tool",
     tags: ["URL Shortener", "QR Code", "Analytics", "UTM Builder"],
     emoji: "🔗",
@@ -69,7 +70,7 @@ const PRODUCTS: Product[] = [
     name: "Image Compressor",
     description:
       "Client-side image compression tool that runs entirely in your browser — no upload, no server, fully private. Supports JPEG, PNG, WebP. Drag & drop, adjust quality, and download instantly.",
-    url: "https://image.ndlong.site",
+    url: SUBDOMAINS.image,
     category: "tool",
     tags: ["Image", "Compression", "Privacy", "Client-side"],
     emoji: "🖼️",
@@ -84,7 +85,7 @@ const PRODUCTS: Product[] = [
     name: "FB Video Downloader",
     description:
       "Simple and fast Facebook video downloader. Paste the video URL and get a direct download link in seconds — supports public videos in HD and SD quality. No login required.",
-    url: "https://fb.ndlong.site",
+    url: SUBDOMAINS.fb,
     category: "tool",
     tags: ["Facebook", "Video", "Downloader", "Free"],
     emoji: "⬇️",
@@ -96,7 +97,7 @@ const PRODUCTS: Product[] = [
     name: "Lãi Suất Ngân Hàng",
     description:
       "Công cụ tra cứu và so sánh lãi suất tiền gửi các ngân hàng Việt Nam theo kỳ hạn. Cập nhật thường xuyên, hỗ trợ tính lãi tự động. Dành cho người gửi tiết kiệm cá nhân và doanh nghiệp.",
-    url: "https://laisaut.ndlong.site",
+    url: SUBDOMAINS.laisaut,
     category: "tool",
     tags: ["Lãi suất", "Ngân hàng", "Tiết kiệm", "Tài chính"],
     emoji: "🏦",

@@ -3,13 +3,14 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import Script from 'next/script'
+import { SITE_URL, SUBDOMAINS } from '@/config/site'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ndlong.site'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
     template: '%s | Nguyen Dai Long'
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     'image compressor free', 'compress image online free',
     'lãi suất ngân hàng', 'so sánh lãi suất tiết kiệm',
   ],
-  authors: [{ name: 'Nguyen Dai Long', url: 'https://ndlong.site' }],
+  authors: [{ name: 'Nguyen Dai Long', url: SITE_URL }],
   creator: 'Nguyen Dai Long',
   publisher: 'Nguyen Dai Long',
   robots: {
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     alternateLocale: ['vi_VN'],
-    url: 'https://ndlong.site',
+    url: SITE_URL,
     title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
     description: 'Backend Engineer & Backend Lead with 4+ years of experience. Creator of NDL Arcade (free browser games), ShortLink (URL shortener + QR Studio), and other free web tools.',
     siteName: 'Nguyen Dai Long',
@@ -86,10 +87,10 @@ export const metadata: Metadata = {
     google: 'f08a2d0e85e82e12',
   },
   alternates: {
-    canonical: 'https://ndlong.site',
+    canonical: SITE_URL,
     languages: {
-      'en-US': 'https://ndlong.site',
-      'vi-VN': 'https://ndlong.site',
+      'en-US': SITE_URL,
+      'vi-VN': SITE_URL,
     },
   },
 }
@@ -98,10 +99,10 @@ export const metadata: Metadata = {
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://ndlong.site/#person",
+  "@id": `${SITE_URL}/#person`,
   name: "Nguyen Dai Long",
   alternateName: "NDL",
-  url: "https://ndlong.site",
+  url: SITE_URL,
   jobTitle: "Backend Engineer & Backend Lead",
   description: "Backend Engineer with 4+ years of experience in Python, Django, Laravel, AWS, and GCP. Creator of free web games and developer tools.",
   sameAs: [
@@ -111,7 +112,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "NDL Arcade",
-      url: "https://arcade.ndlong.site",
+      url: SUBDOMAINS.arcade,
       description: "Free browser arcade games: Snake, Tetris, Space Invaders, Breakout, Sudoku",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -119,7 +120,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Click 2 Top",
-      url: "https://click.ndlong.site",
+      url: SUBDOMAINS.click,
       description: "Competitive coin clicker arcade game with global Nations Cup leaderboard",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -127,7 +128,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Little Pathfinder",
-      url: "https://kids.ndlong.site",
+      url: SUBDOMAINS.kids,
       description: "Charming maze puzzle game for kids and all ages",
       applicationCategory: "GameApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -135,7 +136,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "ShortLink – URL & QR Studio",
-      url: "https://link.ndlong.site",
+      url: SUBDOMAINS.link,
       description: "Free URL shortener with dynamic QR code generation, analytics, and UTM builder",
       applicationCategory: "BusinessApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -143,7 +144,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Image Compressor",
-      url: "https://image.ndlong.site",
+      url: SUBDOMAINS.image,
       description: "Client-side image compression tool — private, free, no upload required",
       applicationCategory: "UtilitiesApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
@@ -151,7 +152,7 @@ const personSchema = {
     {
       "@type": "WebApplication",
       name: "Lãi Suất Ngân Hàng",
-      url: "https://laisaut.ndlong.site",
+      url: SUBDOMAINS.laisaut,
       description: "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
       applicationCategory: "FinanceApplication",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

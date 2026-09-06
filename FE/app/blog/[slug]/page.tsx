@@ -3,6 +3,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { notFound } from "next/navigation"
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data"
+import { SITE_URL } from "@/config/site"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -28,13 +29,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${post.title} | Nguyen Dai Long`,
     description: post.excerpt,
     alternates: {
-      canonical: `https://ndlong.site/blog/${post.slug}`,
+      canonical: `${SITE_URL}/blog/${post.slug}`,
     },
     openGraph: {
       type: "article",
       title: post.title,
       description: post.excerpt,
-      url: `https://ndlong.site/blog/${post.slug}`,
+      url: `${SITE_URL}/blog/${post.slug}`,
       publishedTime: post.date,
       authors: ["Nguyen Dai Long"],
       tags: post.tags,

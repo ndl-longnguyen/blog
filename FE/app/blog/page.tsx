@@ -2,13 +2,14 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
 import { BLOG_POSTS } from "@/lib/blog-data"
+import { SITE_URL } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Engineering Blog & Technical Insights | Nguyen Dai Long",
   description:
     "Practical deep-dives into backend scalability, PostgreSQL optimization, Redis caching, Docker, Google Cloud Run, and real-time WebSockets by Nguyen Dai Long.",
   alternates: {
-    canonical: "https://ndlong.site/blog",
+    canonical: `${SITE_URL}/blog`,
   },
 }
 

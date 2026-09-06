@@ -1,7 +1,9 @@
 import Link from "next/link"
+import { SITE_URL } from "@/config/site"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
+  const displayHost = SITE_URL.replace(/^https?:\/\//, '')
 
   return (
     <footer className="py-10 text-center border-t border-border/30 mt-16">
@@ -107,8 +109,8 @@ export function Footer() {
         <p>
           © {currentYear}{" "}
           <span className="text-primary font-semibold">Nguyen Dai Long</span> (
-          <a href="https://ndlong.site" className="hover:text-primary hover:underline">
-            ndlong.site
+          <a href={SITE_URL} className="hover:text-primary hover:underline">
+            {displayHost}
           </a>
           ). All rights reserved.
         </p>

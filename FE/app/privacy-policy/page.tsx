@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { SITE_URL } from "@/config/site"
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Nguyen Dai Long (ndlong.site)",
@@ -192,8 +193,8 @@ export default function PrivacyPolicy() {
               </a>
               <br />
               Website:{" "}
-              <a href="https://ndlong.site" className="text-primary hover:underline">
-                https://ndlong.site
+              <a href={SITE_URL} className="text-primary hover:underline">
+                {SITE_URL}
               </a>
               <br />
               Location: Da Nang, Vietnam
