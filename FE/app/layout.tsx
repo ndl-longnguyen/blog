@@ -12,7 +12,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
+    default: 'Nguyen Dai Long – Backend Engineer & Tech Blog',
     template: '%s | Nguyen Dai Long'
   },
   description: 'Backend Engineer & Backend Lead with 4+ years of experience in Python (Django/DRF), Laravel, AWS, and GCP. Creator of NDL Arcade (free browser games), ShortLink (URL shortener), and other free web tools. Based in Da Nang, Vietnam.',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     'Little Pathfinder', 'puzzle game for kids', 'maze game',
     'image compressor free', 'compress image online free',
     'lãi suất ngân hàng', 'so sánh lãi suất tiết kiệm',
+    'tỷ giá ngoại tệ', 'giá vàng sjc',
   ],
   authors: [{ name: 'Nguyen Dai Long', url: SITE_URL }],
   creator: 'Nguyen Dai Long',
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     alternateLocale: ['vi_VN'],
     url: SITE_URL,
-    title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
+    title: 'Nguyen Dai Long – Backend Engineer & Tech Blog',
     description: 'Backend Engineer & Backend Lead with 4+ years of experience. Creator of NDL Arcade (free browser games), ShortLink (URL shortener + QR Studio), and other free web tools.',
     siteName: 'Nguyen Dai Long',
     images: [
@@ -78,7 +79,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Nguyen Dai Long | Backend Engineer & Creator of Free Tools & Games',
+    title: 'Nguyen Dai Long – Backend Engineer & Tech Blog',
     description: 'Backend Engineer & Backend Lead. Creator of free browser games (NDL Arcade, Click 2 Top) and web tools (ShortLink, Image Compressor).',
     creator: '@ndl_longnguyen',
     images: ['/android-chrome-512x512.png'],
@@ -95,67 +96,91 @@ export const metadata: Metadata = {
   },
 }
 
-// Schema.org structured data
-const personSchema = {
+// Schema.org structured data with WebSite definition for Google Site Names
+const structuredData = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "@id": `${SITE_URL}/#person`,
-  name: "Nguyen Dai Long",
-  alternateName: "NDL",
-  url: SITE_URL,
-  jobTitle: "Backend Engineer & Backend Lead",
-  description: "Backend Engineer with 4+ years of experience in Python, Django, Laravel, AWS, and GCP. Creator of free web games and developer tools.",
-  sameAs: [
-    "https://www.linkedin.com/in/ndl-longnguyen/",
-  ],
-  owns: [
+  "@graph": [
     {
-      "@type": "WebApplication",
-      name: "NDL Arcade",
-      url: SUBDOMAINS.arcade,
-      description: "Free browser arcade games: Snake, Tetris, Space Invaders, Breakout, Sudoku",
-      applicationCategory: "GameApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      "url": `${SITE_URL}/`,
+      "name": "Nguyen Dai Long",
+      "alternateName": ["NDL", "ndlong.site", "Nguyen Dai Long Blog"],
+      "description": "Portfolio & Engineering Blog của Nguyễn Đại Long - Backend Engineer & Creator.",
+      "inLanguage": "en-US",
+      "publisher": {
+        "@id": `${SITE_URL}/#person`,
+      },
     },
     {
-      "@type": "WebApplication",
-      name: "Click 2 Top",
-      url: SUBDOMAINS.click,
-      description: "Competitive coin clicker arcade game with global Nations Cup leaderboard",
-      applicationCategory: "GameApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    },
-    {
-      "@type": "WebApplication",
-      name: "Little Pathfinder",
-      url: SUBDOMAINS.kids,
-      description: "Charming maze puzzle game for kids and all ages",
-      applicationCategory: "GameApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    },
-    {
-      "@type": "WebApplication",
-      name: "ShortLink – URL & QR Studio",
-      url: SUBDOMAINS.link,
-      description: "Free URL shortener with dynamic QR code generation, analytics, and UTM builder",
-      applicationCategory: "BusinessApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    },
-    {
-      "@type": "WebApplication",
-      name: "Image Compressor",
-      url: SUBDOMAINS.image,
-      description: "Client-side image compression tool — private, free, no upload required",
-      applicationCategory: "UtilitiesApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    },
-    {
-      "@type": "WebApplication",
-      name: "Lãi Suất Ngân Hàng",
-      url: SUBDOMAINS.laisaut,
-      description: "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
-      applicationCategory: "FinanceApplication",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      "name": "Nguyen Dai Long",
+      "alternateName": "NDL",
+      "url": `${SITE_URL}/`,
+      "jobTitle": "Backend Engineer & Backend Lead",
+      "description": "Backend Engineer with 4+ years of experience in Python, Django, Laravel, AWS, and GCP. Creator of free web games and developer tools.",
+      "sameAs": [
+        "https://www.linkedin.com/in/ndl-longnguyen/",
+      ],
+      "owns": [
+        {
+          "@type": "WebApplication",
+          "name": "NDL Arcade",
+          "url": SUBDOMAINS.arcade,
+          "description": "Free browser arcade games: Snake, Tetris, Space Invaders, Breakout, Sudoku",
+          "applicationCategory": "GameApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Click 2 Top",
+          "url": SUBDOMAINS.click,
+          "description": "Competitive coin clicker arcade game with global Nations Cup leaderboard",
+          "applicationCategory": "GameApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Little Pathfinder",
+          "url": SUBDOMAINS.kids,
+          "description": "Charming maze puzzle game for kids and all ages",
+          "applicationCategory": "GameApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "ShortLink – URL & QR Studio",
+          "url": SUBDOMAINS.link,
+          "description": "Free URL shortener with dynamic QR code generation, analytics, and UTM builder",
+          "applicationCategory": "BusinessApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Image Compressor",
+          "url": SUBDOMAINS.image,
+          "description": "Client-side image compression tool — private, free, no upload required",
+          "applicationCategory": "UtilitiesApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Lãi Suất Ngân Hàng",
+          "url": SUBDOMAINS.laisuat,
+          "description": "Công cụ tra cứu và so sánh lãi suất tiền gửi ngân hàng Việt Nam",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Tỷ Giá & Giá Vàng Hub",
+          "url": SUBDOMAINS.tygia,
+          "description": "Bảng giá vàng SJC, DOJI, tỷ giá ngoại tệ Vietcombank và giá xăng dầu Petrolimex thời gian thực",
+          "applicationCategory": "FinanceApplication",
+          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        },
+      ],
     },
   ],
 }
@@ -178,7 +203,7 @@ export default function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-9166964727480227" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <Script
           async

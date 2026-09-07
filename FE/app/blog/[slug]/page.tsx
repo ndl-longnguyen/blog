@@ -59,9 +59,78 @@ export default async function BlogPostPage({ params }: PageProps) {
   const post = BLOG_POSTS[postIndex]
   const prevPost = postIndex > 0 ? BLOG_POSTS[postIndex - 1] : null
   const nextPost = postIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[postIndex + 1] : null
+  const postUrl = `${SITE_URL}/blog/${post.slug}`
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${postUrl}/#article`,
+    headline: post.title,
+    description: post.excerpt,
+    url: postUrl,
+    datePublished: post.date,
+    dateModified: post.date,
+    author: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Nguyen Dai Long",
+      url: SITE_URL,
+    },
+    publisher: {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      name: "Nguyen Dai Long",
+      url: SITE_URL,
+    },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "Nguyen Dai Long",
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    keywords: post.tags,
+    articleSection: post.category,
+  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${SITE_URL}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: postUrl,
+      },
+    ],
+  }
 
   return (
     <div className="min-h-screen bg-background text-foreground py-12 px-6 sm:px-12 lg:px-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <div className="max-w-4xl mx-auto">
         {/* Navigation / Header */}
         <div className="flex items-center justify-between pb-8 border-b border-border/40 mb-10">

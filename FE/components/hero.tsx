@@ -25,7 +25,7 @@ export function Hero() {
         }`}
       >
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-3">
-          Nguyen Dai Long.
+          Nguyen Dai Long
         </h1>
       </div>
 
