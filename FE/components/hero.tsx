@@ -1,49 +1,23 @@
-"use client"
-
-import { useEffect, useState } from "react"
-
 export function Hero() {
-  const [isVisible, setIsVisible] = useState(false)
-
-  useEffect(() => {
-    setIsVisible(true)
-  }, [])
-
   return (
     <section className="min-h-screen flex flex-col justify-center pt-20">
-      <div
-        className={`transition-all duration-700 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
+      <div>
         <p className="text-primary font-mono mb-5">Hi, my name is</p>
       </div>
 
-      <div
-        className={`transition-all duration-700 delay-100 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
+      <div>
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-3">
           Nguyen Dai Long
         </h1>
       </div>
 
-      <div
-        className={`transition-all duration-700 delay-200 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
-        <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6">
+      <div>
+        <p className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6">
           I build scalable backend systems.
-        </h2>
+        </p>
       </div>
 
-      <div
-        className={`transition-all duration-700 delay-300 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
+      <div>
         <p className="text-muted-foreground max-w-xl text-lg leading-relaxed mb-12">
           Backend Engineer & Backend Lead with <span className="text-primary">4+ years</span> of experience 
           specializing in Python (Django/DRF), Laravel, and cloud architectures (AWS & GCP). 
@@ -56,11 +30,7 @@ export function Hero() {
         </p>
       </div>
 
-      <div
-        className={`transition-all duration-700 delay-500 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
+      <div>
         <a
           href="#contact"
           className="inline-block px-7 py-4 border border-primary text-primary font-mono rounded hover:bg-primary/10 transition-colors"

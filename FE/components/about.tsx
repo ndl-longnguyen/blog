@@ -70,10 +70,11 @@ export function About() {
             <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors z-10" />
             <div className="w-full aspect-square bg-card rounded overflow-hidden flex items-center justify-center">
               <Image
-                src="/logo-dark.png"
+                src="/logo-dark.webp"
                 alt="Nguyen Dai Long"
                 width={400}
                 height={400}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>

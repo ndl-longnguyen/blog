@@ -226,7 +226,7 @@ export function Products() {
                   {product.tags.map((tag) => (
                     <li
                       key={tag}
-                      className="font-mono text-[10px] text-muted-foreground/70 px-2 py-0.5 rounded bg-background/60"
+                      className="font-mono text-[10px] text-muted-foreground px-2 py-0.5 rounded bg-background/60"
                     >
                       {tag}
                     </li>
