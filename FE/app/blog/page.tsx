@@ -1,8 +1,10 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import Image from "next/image"
+import { Suspense } from "react"
 import { BLOG_POSTS } from "@/lib/blog-data"
 import { SITE_URL } from "@/config/site"
+import { BlogFilter } from "@/components/blog/blog-filter"
 
 export const metadata: Metadata = {
   title: "Engineering Blog & Technical Insights | Nguyen Dai Long",
@@ -10,6 +12,31 @@ export const metadata: Metadata = {
     "Practical deep-dives into backend scalability, PostgreSQL optimization, Redis caching, Docker, Google Cloud Run, and real-time WebSockets by Nguyen Dai Long.",
   alternates: {
     canonical: `${SITE_URL}/blog`,
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
+  },
+  openGraph: {
+    type: "website",
+    title: "Engineering Blog & Technical Insights | Nguyen Dai Long",
+    description:
+      "Practical deep-dives into backend scalability, PostgreSQL optimization, Redis caching, Docker, Google Cloud Run, and real-time WebSockets.",
+    url: `${SITE_URL}/blog`,
+    siteName: "Nguyen Dai Long",
+    images: [
+      {
+        url: `${SITE_URL}/android-chrome-512x512.png`,
+        width: 512,
+        height: 512,
+        alt: "Nguyen Dai Long - Engineering Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Engineering Blog & Technical Insights | Nguyen Dai Long",
+    description:
+      "Practical deep-dives into backend scalability, PostgreSQL optimization, Redis caching, Docker, and WebSockets.",
   },
 }
 
@@ -75,9 +102,9 @@ export default function BlogIndexPage() {
         </div>
 
         {/* Hero Section */}
-        <header className="mb-14">
+        <header className="mb-12">
           <p className="font-mono text-primary text-sm tracking-widest uppercase mb-2">
-            01. Technical Insights & Architecture
+            01. Technical Insights &amp; Architecture
           </p>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-foreground tracking-tight mb-4">
             Engineering Blog
@@ -87,54 +114,10 @@ export default function BlogIndexPage() {
           </p>
         </header>
 
-        {/* Blog Post Grid */}
-        <div className="space-y-8">
-          {BLOG_POSTS.map((post) => (
-            <article
-              key={post.slug}
-              className="p-6 sm:p-8 rounded-xl border border-border/50 bg-card/40 hover:border-primary/50 hover:bg-card/70 transition-all duration-300 group"
-            >
-              <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground mb-3">
-                <span className="text-primary font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20">
-                  {post.category}
-                </span>
-                <span>•</span>
-                <span>{post.date}</span>
-                <span>•</span>
-                <span>{post.readTime}</span>
-              </div>
-
-              <h2 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors mb-3 leading-snug">
-                <Link href={`/blog/${post.slug}`} className="focus:outline-none">
-                  {post.title}
-                </Link>
-              </h2>
-
-              <p className="text-muted-foreground text-sm sm:text-base leading-relaxed mb-6">
-                {post.excerpt}
-              </p>
-
-              <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-border/30">
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.slice(0, 4).map((tag) => (
-                    <span
-                      key={tag}
-                      className="font-mono text-xs px-2 py-0.5 rounded bg-muted/40 text-muted-foreground"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="font-mono text-xs sm:text-sm text-primary font-semibold inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
-                >
-                  Read Full Article →
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+        {/* Interactive Filter and Blog Post Grid */}
+        <Suspense fallback={<div className="text-muted-foreground font-mono text-xs py-8">Loading articles...</div>}>
+          <BlogFilter posts={BLOG_POSTS} />
+        </Suspense>
 
         {/* Footer info */}
         <footer className="mt-16 pt-8 border-t border-border/40 text-center font-mono text-xs text-muted-foreground">

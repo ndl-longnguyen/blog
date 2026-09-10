@@ -15,12 +15,23 @@ export function BlogPreview() {
             Engineering Blog
           </h2>
         </div>
-        <Link
-          href="/blog"
-          className="font-mono text-sm text-primary hover:underline inline-flex items-center gap-1 self-start sm:self-auto"
-        >
-          View All {BLOG_POSTS.length} Articles →
-        </Link>
+        <div className="flex items-center gap-4 self-start sm:self-auto font-mono text-sm">
+          <a
+            href="/feed.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Subscribe via RSS"
+            className="text-xs text-amber-400/90 hover:text-amber-400 hover:underline inline-flex items-center gap-1 px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/20 transition-colors"
+          >
+            <span>RSS Feed</span>
+          </a>
+          <Link
+            href="/blog"
+            className="text-primary hover:underline inline-flex items-center gap-1"
+          >
+            View All {BLOG_POSTS.length} Articles →
+          </Link>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

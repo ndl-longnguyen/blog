@@ -5,7 +5,7 @@ import { SITE_URL } from '@/config/site'
 export default function sitemap(): MetadataRoute.Sitemap {
   const blogEntries: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
     url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(),
+    lastModified: new Date(post.date),
     changeFrequency: 'monthly',
     priority: 0.8,
   }))
@@ -26,27 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...blogEntries,
     {
       url: `${SITE_URL}/privacy-policy`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-09-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/terms`,
-      lastModified: new Date(),
+      lastModified: new Date('2026-09-01'),
       changeFrequency: 'monthly',
       priority: 0.7,
-    },
-    {
-      url: `${SITE_URL}/#products`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${SITE_URL}/#projects`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
   ]
 }

@@ -4,6 +4,10 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data"
 import { SITE_URL } from "@/config/site"
+import { ReadingProgress } from "@/components/blog/reading-progress"
+import { ShareButtons } from "@/components/blog/share-buttons"
+import { CodeBlock } from "@/components/blog/code-block"
+import { ArticleContextualCTA, ArticleEcosystemGrid } from "@/components/blog/article-cta"
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -25,25 +29,39 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
 
+  const postUrl = `${SITE_URL}/blog/${post.slug}`
+  const ogImageUrl = `${SITE_URL}/blog/${post.slug}/opengraph-image`
+  const isoDate = new Date(post.date).toISOString()
+
   return {
     title: `${post.title} | Nguyen Dai Long`,
     description: post.excerpt,
     alternates: {
-      canonical: `${SITE_URL}/blog/${post.slug}`,
+      canonical: postUrl,
     },
     openGraph: {
       type: "article",
       title: post.title,
       description: post.excerpt,
-      url: `${SITE_URL}/blog/${post.slug}`,
-      publishedTime: post.date,
+      url: postUrl,
+      publishedTime: isoDate,
       authors: ["Nguyen Dai Long"],
       tags: post.tags,
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.excerpt,
+      creator: "@ndl_longnguyen",
+      images: [ogImageUrl],
     },
   }
 }
@@ -60,6 +78,8 @@ export default async function BlogPostPage({ params }: PageProps) {
   const prevPost = postIndex > 0 ? BLOG_POSTS[postIndex - 1] : null
   const nextPost = postIndex < BLOG_POSTS.length - 1 ? BLOG_POSTS[postIndex + 1] : null
   const postUrl = `${SITE_URL}/blog/${post.slug}`
+  const ogImageUrl = `${SITE_URL}/blog/${post.slug}/opengraph-image`
+  const isoDate = new Date(post.date).toISOString()
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -68,8 +88,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     headline: post.title,
     description: post.excerpt,
     url: postUrl,
-    datePublished: post.date,
-    dateModified: post.date,
+    image: [ogImageUrl],
+    datePublished: isoDate,
+    dateModified: isoDate,
     author: {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
@@ -123,6 +144,9 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground py-12 px-6 sm:px-12 lg:px-24">
+      {/* Scroll Reading Progress Bar */}
+      <ReadingProgress />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -170,7 +194,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         </nav>
 
         {/* Article Header */}
-        <header className="mb-12">
+        <header className="mb-8">
           <div className="flex flex-wrap items-center gap-3 text-xs font-mono text-muted-foreground mb-4">
             <span className="text-primary font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20">
               {post.category}
@@ -206,6 +230,9 @@ export default async function BlogPostPage({ params }: PageProps) {
           </div>
         </header>
 
+        {/* Top Share Buttons */}
+        <ShareButtons url={postUrl} title={post.title} tags={post.tags} />
+
         {/* Article Content */}
         <article className="space-y-10 text-foreground/90 leading-relaxed text-base sm:text-lg">
           {/* Intro callout */}
@@ -225,15 +252,10 @@ export default async function BlogPostPage({ params }: PageProps) {
 
               {/* Code Snippet if present */}
               {section.codeSnippet && (
-                <div className="my-5 rounded-lg overflow-hidden border border-border bg-slate-950 font-mono text-xs sm:text-sm">
-                  <div className="flex items-center justify-between px-4 py-2 border-b border-border/60 bg-slate-900/80 text-muted-foreground text-xs uppercase tracking-wider">
-                    <span>{section.codeSnippet.language}</span>
-                    <span className="text-[11px] text-primary">ndlong.site</span>
-                  </div>
-                  <pre className="p-4 overflow-x-auto text-slate-100">
-                    <code>{section.codeSnippet.code}</code>
-                  </pre>
-                </div>
+                <CodeBlock
+                  language={section.codeSnippet.language}
+                  code={section.codeSnippet.code}
+                />
               )}
 
               {/* Key Takeaways */}
@@ -255,27 +277,34 @@ export default async function BlogPostPage({ params }: PageProps) {
             </section>
           ))}
 
+          {/* Contextual CTA for Relevant Web Tools */}
+          <ArticleContextualCTA slug={post.slug} />
+
           {/* Conclusion */}
           <section className="pt-6 border-t border-border/40 space-y-3">
             <h2 className="text-xl sm:text-2xl font-bold text-primary font-mono">
-              Summary & Final Thoughts
+              Summary &amp; Final Thoughts
             </h2>
             <p className="text-foreground/90 leading-relaxed">
               {post.content.conclusion}
             </p>
           </section>
 
-          {/* Tags */}
+          {/* Clickable Tags */}
           <div className="pt-6 flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <span
+              <Link
                 key={tag}
-                className="font-mono text-xs px-2.5 py-1 rounded bg-muted/40 text-muted-foreground border border-border/40"
+                href={`/blog?tag=${encodeURIComponent(tag)}`}
+                className="font-mono text-xs px-2.5 py-1 rounded bg-muted/40 text-muted-foreground border border-border/40 hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-colors"
               >
                 #{tag}
-              </span>
+              </Link>
             ))}
           </div>
+
+          {/* Bottom Share Buttons */}
+          <ShareButtons url={postUrl} title={post.title} tags={post.tags} />
         </article>
 
         {/* Author Bio Box */}
@@ -348,6 +377,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             <div />
           )}
         </div>
+
+        {/* NDL Ecosystem Cross-Promotion Grid */}
+        <ArticleEcosystemGrid />
       </div>
     </div>
   )
