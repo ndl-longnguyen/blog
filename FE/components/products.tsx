@@ -260,7 +260,7 @@ export function Products() {
 
       {/* Footer note */}
       <p className="mt-8 font-mono text-xs text-muted-foreground/60 text-center">
-        All products are self-funded side projects, built with Next.js &amp; deployed on Vercel.
+        All products are self-funded independent projects.
       </p>
     </section>
   )

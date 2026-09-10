@@ -114,9 +114,6 @@ export function Footer() {
           </a>
           ). All rights reserved.
         </p>
-        <p className="text-[11px] text-muted-foreground">
-          Designed &amp; Built with Next.js &amp; Tailwind CSS
-        </p>
       </div>
     </footer>
   )
