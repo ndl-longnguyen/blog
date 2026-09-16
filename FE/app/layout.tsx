@@ -192,6 +192,8 @@ const structuredData = {
   ],
 }
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || 'G-HW5WEM823C';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -218,6 +220,24 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9166964727480227"
           crossOrigin="anonymous"
           strategy="lazyOnload"
+        />
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}');
+            `,
+          }}
         />
       </head>
       <body className="font-sans antialiased">
